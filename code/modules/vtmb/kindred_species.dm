@@ -423,11 +423,12 @@
 									else if(H.clane.name == "Tzimisce")
 										BLOODBONDED.clane = new /datum/vampireclane/old_clan_tzimisce()
 										to_chat(BLOODBONDED,"<span class='warning'> You don't got that whitelist! Changing to the non WL Old Tzmisce</span>")
+									else if(H.clane.name == "Cappadocian")
+										BLOODBONDED.clane = new /datum/vampireclane/giovanni()
+										to_chat(BLOODBONDED,"<span class='warning'> You don't got that whitelist! Changing to the non WL Giovanni</span>")
 									else
-										to_chat(BLOODBONDED,"<span class='warning'> You don't got that whitelist! Changing to a random non WL clan.</span>")
-										var/list/non_whitelisted_clans = list(/datum/vampireclane/brujah,/datum/vampireclane/malkavian,/datum/vampireclane/nosferatu,/datum/vampireclane/gangrel,/datum/vampireclane/giovanni,/datum/vampireclane/ministry,/datum/vampireclane/salubri,/datum/vampireclane/toreador,/datum/vampireclane/tremere,/datum/vampireclane/ventrue)
-										var/random_clan = pick(non_whitelisted_clans)
-										BLOODBONDED.clane = new random_clan
+										BLOODBONDED.clane = new /datum/vampireclane/caitiff()
+										to_chat(BLOODBONDED,"<span class='warning'> You don't got that whitelist! Changing to a non WL Caitiff</span>")
 								else
 									BLOODBONDED.clane = new H.clane.type()
 							else
